@@ -63,13 +63,14 @@ export default function LeadForm() {
   };
 
   return (
-    <section id="lead-form" className="bg-[#1A2B3C] py-20">
+    <section id="lead-form" className="bg-[#0F1B2D] py-20">
       <div className="mx-auto max-w-4xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="glass-card glow-border rounded-2xl p-8 md:p-12"
         >
           <h2 className="mb-4 text-center text-3xl font-bold text-white md:text-4xl">
             כל שקל שספק גובה בטעות - אנחנו נמצא אותו

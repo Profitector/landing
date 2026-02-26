@@ -27,14 +27,14 @@ const values = [
 
 export default function ValueCards() {
   return (
-    <section className="bg-[#F4F7F6] py-20">
+    <section className="bg-[#0F1B2D] py-20">
       <div className="mx-auto max-w-6xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-16 text-center text-3xl font-bold text-[#1A2B3C] md:text-4xl"
+          className="mb-16 text-center text-3xl font-bold text-white md:text-4xl"
         >
           למה לבחור ב-Profitector
         </motion.h2>
@@ -47,15 +47,15 @@ export default function ValueCards() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="rounded-xl bg-white p-6 shadow-md"
+              className="glass-card glass-card-hover rounded-xl p-6 shadow-md transition-all duration-300"
             >
               <span className="mb-4 block text-4xl font-bold text-[#2ECC71]">
                 {value.number}
               </span>
-              <h3 className="mb-2 text-lg font-bold text-[#1A2B3C]">
+              <h3 className="mb-2 text-lg font-bold text-white">
                 {value.title}
               </h3>
-              <p className="text-sm text-gray-600">{value.description}</p>
+              <p className="text-sm text-gray-300">{value.description}</p>
             </motion.div>
           ))}
         </div>
