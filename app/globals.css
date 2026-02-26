@@ -1,10 +1,12 @@
 @import "tailwindcss";
 
 :root {
-  --background: #F4F7F6;
-  --foreground: #1A2B3C;
-  --navy: #1A2B3C;
+  --background: #0F1B2D;
+  --foreground: #FFFFFF;
+  --navy: #0F1B2D;
+  --navy-light: #1A2B3C;
   --green: #2ECC71;
+  --green-glow: rgba(46, 204, 113, 0.3);
   --light-gray: #F4F7F6;
 }
 
@@ -12,6 +14,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-navy: var(--navy);
+  --color-navy-light: var(--navy-light);
   --color-green: var(--green);
   --color-light-gray: var(--light-gray);
   --font-sans: var(--font-heebo);
@@ -25,4 +28,42 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-heebo), "Segoe UI", Arial, sans-serif;
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(46, 204, 113, 0.3), 0 0 40px rgba(46, 204, 113, 0.1);
+  }
+
+  50% {
+    box-shadow: 0 0 30px rgba(46, 204, 113, 0.5), 0 0 60px rgba(46, 204, 113, 0.2);
+  }
+}
+
+.glow-border {
+  border: 1px solid rgba(46, 204, 113, 0.4);
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
+}
+
+.glow-border-strong {
+  border: 2px solid rgba(46, 204, 113, 0.6);
+  box-shadow: 0 0 30px rgba(46, 204, 113, 0.3), 0 0 60px rgba(46, 204, 113, 0.1);
+}
+
+.glow-animate {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(46, 204, 113, 0.4);
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
 }

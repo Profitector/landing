@@ -31,7 +31,7 @@ const contactItems = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#1A2B3C] py-12">
+    <footer className="border-t border-[#2ECC71]/20 bg-[#0F1B2D] py-12 shadow-[0_-4px_20px_rgba(46,204,113,0.1)]">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 md:grid-cols-2">
           {/* Right column – branding */}
