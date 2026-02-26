@@ -46,7 +46,7 @@ export default function LeadForm() {
           transition={{ duration: 0.6 }}
         >
           <h2 className="mb-4 text-center text-3xl font-bold text-white md:text-4xl">
-            תפסיקו לדמם כסף על טעויות ספקים
+            כל שקל שספק גובה בטעות - אנחנו נמצא אותו
           </h2>
           <p className="mb-10 text-center text-lg text-gray-400">
             השאירו פרטים ונחזור אליכם תוך 24 שעות
@@ -96,9 +96,9 @@ export default function LeadForm() {
               <div className="text-center">
                 <button
                   type="submit"
-                  className="rounded-full bg-[#2ECC71] px-12 py-4 text-lg font-semibold text-white transition-transform hover:scale-105 hover:bg-[#27ae60]"
+                  className="cursor-pointer rounded-full bg-[#2ECC71] px-12 py-4 text-lg font-semibold text-white transition-transform hover:scale-105 hover:bg-[#27ae60]"
                 >
-                  אני רוצה להיות לקוח ראשון
+                  רוצה לחסוך כסף - דברו איתי
                 </button>
               </div>
             </form>
