@@ -32,7 +32,7 @@ export default function HowItWorks() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center text-3xl font-bold text-[#1A2B3C] md:text-4xl"
         >
-          איך זה עובד
+          איך זה עובד?
         </motion.h2>
 
         <div className="grid gap-8 md:grid-cols-3">
