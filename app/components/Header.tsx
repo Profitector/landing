@@ -19,6 +19,7 @@ export default function Header() {
           height={100}
           className="h-12 w-auto object-contain"
           priority
+          
         />
         <a
           href="#lead-form"
