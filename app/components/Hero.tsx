@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 export default function Hero() {
   return (
     <section className="bg-[#1A2B3C] pt-24 pb-20">
-      <div className="mx-auto max-w-5xl px-6 text-center">
+      <div className="mx-auto max-w-5xl px-6 text-center pt-3">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -16,7 +16,6 @@ export default function Hero() {
           <br />
          <div className="mt-2"><span className="text-[#2ECC71]" >Profitector</span> תעצור את זה בזמן אמת</div>
         </motion.h1>
-
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
