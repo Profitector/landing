@@ -22,6 +22,8 @@ export default function LeadForm() {
     email: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -31,9 +33,33 @@ export default function LeadForm() {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+    setError("");
+
+    try {
+      const res = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const contentType = res.headers.get("content-type") || "";
+      if (!res.ok) {
+        if (contentType.includes("application/json")) {
+          const data = await res.json();
+          throw new Error(data.error || "שגיאה בשליחה");
+        }
+        throw new Error("שגיאה בשליחה");
+      }
+
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "שגיאה בשליחה, נסו שוב");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -93,12 +119,16 @@ export default function LeadForm() {
                   onChange={handleChange}
                 />
               </div>
+              {error && (
+                <p className="text-center text-red-400">{error}</p>
+              )}
               <div className="text-center">
                 <button
                   type="submit"
-                  className="cursor-pointer rounded-full bg-[#2ECC71] px-12 py-4 text-lg font-semibold text-white transition-transform hover:scale-105 hover:bg-[#27ae60]"
+                  disabled={loading}
+                  className="cursor-pointer rounded-full bg-[#2ECC71] px-12 py-4 text-lg font-semibold text-white transition-transform hover:scale-105 hover:bg-[#27ae60] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
                 >
-                  רוצה לחסוך כסף - דברו איתי
+                  {loading ? "שולח..." : "רוצה לחסוך כסף - דברו איתי"}
                 </button>
               </div>
             </form>
