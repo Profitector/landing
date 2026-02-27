@@ -48,7 +48,7 @@ export default function SelectBox({
           className="absolute inset-0 opacity-0 pointer-events-none"
           value={value}
           required
-          onChange={() => {}}
+          onChange={() => { }}
         />
       )}
 
@@ -61,14 +61,13 @@ export default function SelectBox({
           {selectedLabel || placeholder}
         </span>
         <ChevronDown
-          className={`h-5 w-5 text-gray-400 transition-transform ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`h-5 w-5 text-gray-400 transition-transform ${isOpen ? "rotate-180" : ""
+            }`}
         />
       </button>
 
       {isOpen && (
-        <ul className="absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded-lg bg-white shadow-xl">
+        <ul className="absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded-lg bg-[#1A2B3C] border border-[#2ECC71]/20 shadow-xl">
           {options.map((option) => (
             <li key={option.value}>
               <button
@@ -77,11 +76,10 @@ export default function SelectBox({
                   onChange(name, option.value);
                   setIsOpen(false);
                 }}
-                className={`w-full px-5 py-3 text-right transition-colors hover:bg-[#F4F7F6] ${
-                  value === option.value
-                    ? "bg-[#2ECC71]/10 font-semibold text-[#1A2B3C]"
-                    : "text-gray-700"
-                }`}
+                className={`w-full px-5 py-3 text-right transition-colors hover:bg-white/10 ${value === option.value
+                    ? "bg-[#2ECC71]/15 font-semibold text-[#2ECC71]"
+                    : "text-gray-300"
+                  }`}
               >
                 {option.label}
               </button>

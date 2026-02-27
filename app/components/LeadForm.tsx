@@ -80,11 +80,24 @@ export default function LeadForm() {
           </p>
 
           {submitted ? (
-            <div className="rounded-xl bg-[#2ECC71] p-8 text-center">
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.5, type: "spring" }}
+              className="glow-border rounded-xl bg-[#2ECC71]/10 p-10 text-center"
+            >
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#2ECC71]">
+                <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
               <p className="text-2xl font-bold text-white">
-                תודה! נחזור אליכם בהקדם
+                תודה! קיבלנו את הפרטים
               </p>
-            </div>
+              <p className="mt-2 text-gray-300">
+                נחזור אליכם תוך 24 שעות
+              </p>
+            </motion.div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid gap-6 md:grid-cols-2">
@@ -127,9 +140,9 @@ export default function LeadForm() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="cursor-pointer rounded-full bg-[#2ECC71] px-12 py-4 text-lg font-semibold text-white transition-transform hover:scale-105 hover:bg-[#27ae60] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
+                  className="btn-glow cursor-pointer rounded-full bg-[#2ECC71] px-12 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-[#27ae60] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
                 >
-                  {loading ? "שולח..." : "רוצה לחסוך כסף - דברו איתי"}
+                  {loading ? "שולח..." : "רוצה לחסוך כסף - דברו איתי →"}
                 </button>
               </div>
             </form>

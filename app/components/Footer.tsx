@@ -33,14 +33,28 @@ export default function Footer() {
   return (
     <footer className="border-t border-[#2ECC71]/20 bg-[#0F1B2D] py-12 shadow-[0_-4px_20px_rgba(46,204,113,0.1)]">
       <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-10 md:grid-cols-2">
+        <div className="grid gap-10 md:grid-cols-3">
           {/* Right column – branding */}
           <div>
-            <h3 className="mb-3 text-2xl font-bold text-white">Profitector</h3>
+            <h3 className="mb-3 text-2xl font-bold text-white">
+              <span className="gradient-text">Profitector</span>
+            </h3>
             <p className="max-w-sm text-gray-400">
               המערכת האוטונומית שמגנה על הרווחיות שלך, סורקת כל שורה בחשבוניות
               ומזהה טעויות חיוב בזמן אמת.
             </p>
+          </div>
+
+          {/* Middle column – quick links */}
+          <div>
+            <h4 className="mb-4 text-lg font-semibold text-white">ניווט מהיר</h4>
+            <ul className="space-y-2">
+              <li><a href="#savings" className="text-gray-400 transition-colors hover:text-[#2ECC71]">מחשבון חיסכון</a></li>
+              <li><a href="#how-it-works" className="text-gray-400 transition-colors hover:text-[#2ECC71]">איך זה עובד</a></li>
+              <li><a href="#why-us" className="text-gray-400 transition-colors hover:text-[#2ECC71]">למה אנחנו</a></li>
+              <li><a href="#faq" className="text-gray-400 transition-colors hover:text-[#2ECC71]">שאלות נפוצות</a></li>
+              <li><a href="#lead-form" className="text-gray-400 transition-colors hover:text-[#2ECC71]">צרו קשר</a></li>
+            </ul>
           </div>
 
           {/* Left column – contact info */}
