@@ -13,7 +13,7 @@ export default function SavingsCalculator() {
   const estimatedLoss = Math.round(turnover * 0.04);
 
   return (
-    <section className="bg-[#0F1B2D] py-20">
+    <section id="savings" className="bg-darker py-20">
       <div className="mx-auto max-w-3xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -38,7 +38,7 @@ export default function SavingsCalculator() {
                 step={100000}
                 value={turnover}
                 onChange={(e) => setTurnover(Number(e.target.value))}
-                className="h-2 w-full cursor-pointer appearance-none rounded-full bg-gray-200 [&::-webkit-slider-thumb]:h-8 [&::-webkit-slider-thumb]:w-8 [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:bg-[#2ECC71] [&::-webkit-slider-thumb]:shadow-lg [&::-webkit-slider-thumb]:transition-transform [&::-webkit-slider-thumb]:hover:scale-110 [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:active:cursor-grabbing [&::-moz-range-thumb]:h-8 [&::-moz-range-thumb]:w-8 [&::-moz-range-thumb]:appearance-none [&::-moz-range-thumb]:rounded-full [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-[#2ECC71] [&::-moz-range-thumb]:shadow-lg [&::-moz-range-thumb]:transition-transform [&::-moz-range-thumb]:hover:scale-110 [&::-moz-range-thumb]:cursor-grab [&::-moz-range-thumb]:active:cursor-grabbing"
+                className="w-full cursor-pointer"
               />
             </div>
             <div className="mt-5 text-center text-3xl font-bold text-white">

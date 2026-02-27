@@ -18,8 +18,8 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-center lg:text-right"
           >
-            <h1 className="mb-6 text-3xl font-bold leading-tight text-white md:text-5xl lg:text-6xl">
-              <span className="text-[#2ECC71]">Profitector</span>
+            <h1 className="mb-6 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
+              <span className="gradient-text">Profitector</span>
               <br />
               <span className="mt-2 block">מפסיקים להפסיד כסף</span>
               <span className="block">על טעויות ספקים</span>
@@ -37,10 +37,16 @@ export default function Hero() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: 0.7 }}
               href="#lead-form"
-              className="inline-block rounded-full bg-[#2ECC71] px-10 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-[#27ae60] hover:shadow-lg hover:shadow-[#2ECC71]/30"
+              className="btn-glow inline-block rounded-full bg-[#2ECC71] px-10 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-[#27ae60]"
             >
-              לבדיקה חינם
+              לבדיקה חינם →
             </motion.a>
+
+            <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400 lg:justify-start">
+              <span className="flex items-center gap-1"><span className="text-[#2ECC71]">✓</span> ללא התחייבות</span>
+              <span className="flex items-center gap-1"><span className="text-[#2ECC71]">✓</span> תוצאות תוך 48 שעות</span>
+              <span className="flex items-center gap-1"><span className="text-[#2ECC71]">✓</span> על בסיס הצלחה בלבד</span>
+            </div>
           </motion.div>
 
           {/* Left column - Dashboard mockup with glow */}

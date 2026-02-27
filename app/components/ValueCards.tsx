@@ -1,25 +1,27 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { ShieldCheck, Target, Brain, Zap } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
-const values = [
+const values: { icon: LucideIcon; title: string; description: string }[] = [
   {
-    number: "01",
+    icon: ShieldCheck,
     title: "הצלחה מובטחת",
     description: "אנחנו מתחייבים לתוצאות, אתם משלמים רק על חיסכון אמיתי",
   },
   {
-    number: "02",
+    icon: Target,
     title: "דיוק מקסימלי",
     description: "טכנולוגיית AI מתקדמת שמזהה כל חריגה, גם הקטנה ביותר",
   },
   {
-    number: "03",
+    icon: Brain,
     title: "שקט נפשי",
     description: "אתם מתמקדים בעסק, אנחנו דואגים לרווחיות",
   },
   {
-    number: "04",
+    icon: Zap,
     title: "הטמעה מיידית",
     description: "התחלת עבודה תוך 24 שעות, ללא שינויים במערכות הקיימות",
   },
@@ -27,8 +29,20 @@ const values = [
 
 export default function ValueCards() {
   return (
-    <section className="bg-[#0F1B2D] py-20">
+    <section id="why-us" className="bg-darker py-20">
+      <div className="section-divider mx-auto mb-16 max-w-4xl" />
       <div className="mx-auto max-w-6xl px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="mb-4 text-center"
+        >
+          <span className="inline-block rounded-full bg-[#2ECC71]/10 px-4 py-1 text-sm font-semibold text-[#2ECC71]">
+            יתרונות
+          </span>
+        </motion.div>
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -42,16 +56,16 @@ export default function ValueCards() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           {values.map((value, index) => (
             <motion.div
-              key={value.number}
+              key={value.title}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="glass-card glass-card-hover rounded-xl p-6 shadow-md transition-all duration-300"
+              className="glass-card glass-card-hover group rounded-xl border-t-2 border-t-transparent p-6 shadow-md transition-all duration-300 hover:border-t-[#2ECC71] hover:-translate-y-1"
             >
-              <span className="mb-4 block text-4xl font-bold text-[#2ECC71]">
-                {value.number}
-              </span>
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-lg bg-[#2ECC71]/10">
+                <value.icon className="h-6 w-6 text-[#2ECC71]" />
+              </div>
               <h3 className="mb-2 text-lg font-bold text-white">
                 {value.title}
               </h3>

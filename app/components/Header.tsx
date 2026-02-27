@@ -19,11 +19,16 @@ export default function Header() {
           height={100}
           className="h-12 w-auto object-contain"
           priority
-
         />
+        <nav className="hidden items-center gap-6 text-sm text-gray-300 md:flex">
+          <a href="#savings" className="transition-colors hover:text-[#2ECC71]">מחשבון חיסכון</a>
+          <a href="#how-it-works" className="transition-colors hover:text-[#2ECC71]">איך זה עובד</a>
+          <a href="#why-us" className="transition-colors hover:text-[#2ECC71]">למה אנחנו</a>
+          <a href="#faq" className="transition-colors hover:text-[#2ECC71]">שאלות נפוצות</a>
+        </nav>
         <a
           href="#lead-form"
-          className="rounded-full bg-[#2ECC71] px-6 py-2 font-semibold text-white transition-all hover:scale-105 hover:bg-[#27ae60] hover:shadow-lg hover:shadow-[#2ECC71]/30"
+          className="btn-glow rounded-full bg-[#2ECC71] px-6 py-2 font-semibold text-white transition-all hover:scale-105 hover:bg-[#27ae60]"
         >
           לבדיקה חינם
         </a>
