@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function CTABanner() {
   return (
-    <section className="bg-darker py-20">
+    <section className="bg-darker py-10 md:py-20">
       <div className="section-divider mx-auto mb-16 max-w-4xl" />
       <div className="mx-auto max-w-4xl px-6 text-center">
         <motion.div
@@ -19,7 +19,7 @@ export default function CTABanner() {
             <span className="gradient-text">4%</span> מהמחזור
           </h2>
           <p className="mb-8 text-lg text-gray-300">
-            על טעויות חיוב של ספקים. בואו נבדוק את שלכם — בחינם.
+            על טעויות חיוב של ספקים. בואו נבדוק את שלכם - בחינם.
           </p>
           <a
             href="#lead-form"

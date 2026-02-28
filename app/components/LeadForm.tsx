@@ -63,7 +63,7 @@ export default function LeadForm() {
   };
 
   return (
-    <section id="lead-form" className="bg-[#0F1B2D] py-20">
+    <section id="lead-form" className="bg-[#0F1B2D] py-10 md:py-20">
       <div className="mx-auto max-w-4xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

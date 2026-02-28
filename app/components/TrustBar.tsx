@@ -57,10 +57,10 @@ export default function TrustBar() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className="bg-darker py-16">
-      <div className="section-divider mx-auto mb-12 max-w-4xl" />
+    <section className="bg-darker py-4 md:py-10">
+      <div className="section-divider mx-auto mb-6 max-w-4xl md:mb-12 hidden md:block" />
       <div ref={ref} className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

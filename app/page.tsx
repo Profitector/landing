@@ -4,7 +4,6 @@ import TrustBar from "./components/TrustBar";
 import SavingsCalculator from "./components/SavingsCalculator";
 import HowItWorks from "./components/HowItWorks";
 import ValueCards from "./components/ValueCards";
-import CTABanner from "./components/CTABanner";
 import FAQ from "./components/FAQ";
 import LeadForm from "./components/LeadForm";
 import Footer from "./components/Footer";
@@ -20,7 +19,6 @@ export default function Home() {
         <SavingsCalculator />
         <HowItWorks />
         <ValueCards />
-        <CTABanner />
         <FAQ />
         <LeadForm />
       </main>
