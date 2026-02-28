@@ -13,7 +13,7 @@ export default function SavingsCalculator() {
   const estimatedLoss = Math.round(turnover * 0.04);
 
   return (
-    <section id="savings" className="bg-darker py-20">
+    <section id="savings" className="bg-darker py-10 md:py-20">
       <div className="mx-auto max-w-3xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 40 }}

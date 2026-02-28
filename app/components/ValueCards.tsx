@@ -29,8 +29,8 @@ const values: { icon: LucideIcon; title: string; description: string }[] = [
 
 export default function ValueCards() {
   return (
-    <section id="why-us" className="bg-darker py-20">
-      <div className="section-divider mx-auto mb-16 max-w-4xl" />
+    <section id="why-us" className="bg-darker py-10 md:py-20">
+      <div className="section-divider mx-auto mb-8 max-w-4xl md:mb-16 hidden md:block" />
       <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -73,6 +73,25 @@ export default function ValueCards() {
             </motion.div>
           ))}
         </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-12 text-center"
+        >
+          <p className="mb-6 text-lg text-gray-300">
+            עסקים מפסידים בממוצע <span className="gradient-text font-bold">4%</span> מהמחזור על טעויות חיוב של ספקים
+          </p>
+          <a
+            href="#lead-form"
+            className="btn-glow inline-block rounded-full bg-[#2ECC71] px-10 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-[#27ae60]"
+          >
+            בואו נבדוק את שלכם — בחינם →
+          </a>
+        </motion.div>
       </div>
     </section>
   );

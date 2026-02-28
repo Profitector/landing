@@ -36,8 +36,8 @@ export default function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="bg-[#0F1B2D] py-20">
-      <div className="section-divider mx-auto mb-16 max-w-4xl" />
+    <section id="faq" className="bg-[#0F1B2D] py-10 md:py-20">
+      <div className="section-divider mx-auto mb-8 max-w-4xl md:mb-16 hidden md:block" />
       <div className="mx-auto max-w-3xl px-6">
         <motion.h2
           initial={{ opacity: 0, y: 30 }}
