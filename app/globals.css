@@ -115,6 +115,30 @@ body {
   animation: pulse-ring 2s ease-out infinite;
 }
 
+/* Accessibility modes */
+html.a11y-high-contrast {
+  filter: contrast(1.4);
+}
+
+html.a11y-high-contrast body {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+html.a11y-grayscale {
+  filter: grayscale(1);
+}
+
+html.a11y-high-contrast.a11y-grayscale {
+  filter: contrast(1.4) grayscale(1);
+}
+
+html.a11y-highlight-links a {
+  outline: 2px solid #2ECC71 !important;
+  outline-offset: 2px;
+  text-decoration: underline !important;
+}
+
 input[type='range'] {
   -webkit-appearance: none;
   appearance: none;
