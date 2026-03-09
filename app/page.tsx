@@ -8,6 +8,8 @@ import FAQ from "./components/FAQ";
 import LeadForm from "./components/LeadForm";
 import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
+import AccessibilityWidget from "./components/AccessibilityWidget";
+import CookieBanner from "./components/CookieBanner";
 
 export default function Home() {
   return (
@@ -24,6 +26,8 @@ export default function Home() {
       </main>
       <Footer />
       <WhatsAppButton />
+      <AccessibilityWidget />
+      <CookieBanner />
     </>
   );
 }

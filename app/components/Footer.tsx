@@ -86,6 +86,13 @@ export default function Footer() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center">
+          <div className="mb-3 flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
+            <a href="/privacy-policy" className="transition-colors hover:text-[#2ECC71]">מדיניות פרטיות</a>
+            <span className="text-gray-600">|</span>
+            <a href="/terms-of-use" className="transition-colors hover:text-[#2ECC71]">תנאי שימוש</a>
+            <span className="text-gray-600">|</span>
+            <a href="/accessibility-statement" className="transition-colors hover:text-[#2ECC71]">הצהרת נגישות</a>
+          </div>
           <p className="text-sm text-gray-500">
             © 2026 Profitector. כל הזכויות שמורות.
           </p>
