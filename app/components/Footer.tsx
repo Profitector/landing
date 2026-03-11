@@ -1,4 +1,4 @@
-import { Mail, Phone, MessageCircle, MapPin } from "lucide-react";
+import { Mail, Phone, MessageCircle, MapPin, Shield } from "lucide-react";
 
 const whatsappLink =
   "https://wa.me/972539230418?text=" +
@@ -31,41 +31,57 @@ const contactItems = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-[#2ECC71]/20 bg-[#0F1B2D] py-12 shadow-[0_-4px_20px_rgba(46,204,113,0.1)]">
-      <div className="mx-auto max-w-6xl px-6">
-        <div className="grid gap-10 md:grid-cols-3">
+    <footer className="border-t border-white/6 bg-[#050505] pt-12 pb-6">
+      <div className="mx-auto max-w-6xl px-6 sm:px-10 lg:px-16">
+        <div className="grid gap-10 text-center md:grid-cols-3 md:text-right">
           {/* Right column – branding */}
           <div>
-            <h3 className="mb-3 text-2xl font-bold text-white">
-              <span className="gradient-text">Profitector</span>
+            <h3 dir="ltr" className="mb-3 flex items-center justify-center gap-2 text-xl font-bold tracking-tight text-white md:justify-end font-(family-name:--font-logo)">
+              <Shield className="h-5 w-5 text-[#2ECC71]" />
+              <span>profitector<span className="text-[#2ECC71]">.ai</span></span>
             </h3>
-            <p className="max-w-sm text-gray-400">
-              המערכת האוטונומית שמגנה על הרווחיות שלך, סורקת כל שורה בחשבוניות
-              ומזהה טעויות חיוב בזמן אמת.
+            <p className="max-w-sm text-sm leading-relaxed text-white/40">
+              מערכת ה-AI שמגינה על שולי הרווח שלכם בזמן אמת - מזהה דליפות,
+              מתריעה על שחיקת מרווחים ומספקת המלצות פעולה לפני שהנזק נגרם.
             </p>
           </div>
 
           {/* Middle column – quick links */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">ניווט מהיר</h4>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-widest text-gray-500">
+              ניווט מהיר
+            </h4>
             <ul className="space-y-2">
-              <li><a href="#savings" className="text-gray-400 transition-colors hover:text-[#2ECC71]">מחשבון חיסכון</a></li>
-              <li><a href="#how-it-works" className="text-gray-400 transition-colors hover:text-[#2ECC71]">איך זה עובד</a></li>
-              <li><a href="#why-us" className="text-gray-400 transition-colors hover:text-[#2ECC71]">למה אנחנו</a></li>
-              <li><a href="#faq" className="text-gray-400 transition-colors hover:text-[#2ECC71]">שאלות נפוצות</a></li>
-              <li><a href="#lead-form" className="text-gray-400 transition-colors hover:text-[#2ECC71]">צרו קשר</a></li>
+              {[
+                { href: "#savings", label: "מחשבון חיסכון" },
+                { href: "#how-it-works", label: "איך זה עובד" },
+                { href: "#why-us", label: "למה אנחנו" },
+                { href: "#faq", label: "שאלות נפוצות" },
+                { href: "#lead-form", label: "צרו קשר" },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-white/40 transition-colors duration-200 hover:text-white"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           {/* Left column – contact info */}
           <div>
-            <h4 className="mb-4 text-lg font-semibold text-white">צרו קשר</h4>
+            <h4 className="mb-4 text-sm font-semibold uppercase tracking-widest text-gray-500">
+              צרו קשר
+            </h4>
             <ul className="space-y-3">
               {contactItems.map((item) => {
                 const Icon = item.icon;
                 const content = (
-                  <span className="flex items-center gap-3 text-gray-300 transition-colors hover:text-[#2ECC71]">
-                    <Icon size={20} className="shrink-0" />
+                  <span className="flex items-center gap-3 text-sm text-white/40 transition-colors duration-200 hover:text-white">
+                    <Icon size={16} className="shrink-0" />
                     <span>{item.label}</span>
                   </span>
                 );
@@ -85,15 +101,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-white/10 pt-6 text-center">
-          <div className="mb-3 flex flex-wrap items-center justify-center gap-4 text-sm text-gray-400">
-            <a href="/privacy-policy" className="transition-colors hover:text-[#2ECC71]">מדיניות פרטיות</a>
-            <span className="text-gray-600">|</span>
-            <a href="/terms-of-use" className="transition-colors hover:text-[#2ECC71]">תנאי שימוש</a>
-            <span className="text-gray-600">|</span>
-            <a href="/accessibility-statement" className="transition-colors hover:text-[#2ECC71]">הצהרת נגישות</a>
+        <div className="mt-10 border-t border-white/5 pt-6 text-center">
+          <div className="mb-3 flex flex-wrap items-center justify-center gap-4 text-xs text-white/40">
+            <a href="/privacy-policy" className="transition-colors duration-200 hover:text-white">מדיניות פרטיות</a>
+            <span>|</span>
+            <a href="/terms-of-use" className="transition-colors duration-200 hover:text-white">תנאי שימוש</a>
+            <span>|</span>
+            <a href="/accessibility-statement" className="transition-colors duration-200 hover:text-white">הצהרת נגישות</a>
           </div>
-          <p className="text-sm text-gray-500">
+          <p className="text-xs text-white/40">
             © 2026 Profitector. כל הזכויות שמורות.
           </p>
         </div>

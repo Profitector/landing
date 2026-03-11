@@ -55,7 +55,7 @@ export default function SelectBox({
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex w-full items-center justify-between rounded-lg border-0 bg-white/10 px-5 py-4 text-right text-white focus:outline-none focus:ring-2 focus:ring-[#2ECC71]"
+        className="flex w-full items-center justify-between rounded-lg border border-white/8 bg-[#111111] px-5 py-4 text-right text-white transition-colors focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#2ECC71]/50 hover:border-white/15"
       >
         <span className={value ? "text-white" : "text-gray-400"}>
           {selectedLabel || placeholder}
@@ -67,7 +67,7 @@ export default function SelectBox({
       </button>
 
       {isOpen && (
-        <ul className="absolute z-50 mt-2 max-h-60 w-full overflow-auto rounded-lg bg-[#1A2B3C] border border-[#2ECC71]/20 shadow-xl">
+        <ul className="absolute z-50 mt-1 max-h-60 w-full overflow-auto rounded-lg border border-white/8 bg-[#111111] shadow-2xl">
           {options.map((option) => (
             <li key={option.value}>
               <button
@@ -76,9 +76,9 @@ export default function SelectBox({
                   onChange(name, option.value);
                   setIsOpen(false);
                 }}
-                className={`w-full px-5 py-3 text-right transition-colors hover:bg-white/10 ${value === option.value
-                    ? "bg-[#2ECC71]/15 font-semibold text-[#2ECC71]"
-                    : "text-gray-300"
+                className={`w-full px-5 py-3 text-right transition-colors hover:bg-white/6 ${value === option.value
+                    ? "bg-[#2ECC71]/10 font-semibold text-[#2ECC71]"
+                    : "text-gray-400"
                   }`}
               >
                 {option.label}
