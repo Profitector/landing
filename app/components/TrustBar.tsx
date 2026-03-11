@@ -7,7 +7,6 @@ const stats = [
   { value: 4, suffix: "%", prefix: "", label: "הפסד ממוצע שמצאנו" },
   { value: 24, suffix: "h", prefix: "", label: "זמן הטמעה" },
   { value: 100, suffix: "%", prefix: "", label: "על בסיס הצלחה" },
-  { value: 0, suffix: "", prefix: "₪", label: "עלות אם לא נמצא חיסכון" },
 ];
 
 function AnimatedCounter({
@@ -44,7 +43,7 @@ function AnimatedCounter({
   const display = Number.isInteger(value) ? Math.round(count) : count.toFixed(1);
 
   return (
-    <span className="gradient-text text-4xl font-bold md:text-5xl">
+    <span className="gradient-text text-3xl font-bold md:text-5xl">
       {prefix}
       {display}
       {suffix}
@@ -57,18 +56,33 @@ export default function TrustBar() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <section className="bg-darker py-4 md:py-10">
-      <div className="section-divider mx-auto mb-6 max-w-4xl md:mb-12 hidden md:block" />
-      <div ref={ref} className="mx-auto max-w-6xl px-6">
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-8">
+    <section className="bg-[#030303] py-8 md:py-12">
+      <div className="section-divider mx-auto mb-6 max-w-4xl md:mb-10" />
+      <div ref={ref} className="mx-auto max-w-5xl px-6 sm:px-10 lg:px-16">
+        <div className="grid grid-cols-2 gap-5 md:grid-cols-4">
+
+          {/* ₪0 Risk-Reversal Highlight - first in RTL */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.05 }}
+            className="glow-border col-span-2 flex flex-col items-center justify-center rounded-2xl bg-[#2ECC71]/6 px-6 py-5 text-center md:col-span-1 md:py-7"
+          >
+            <p className="neon-number text-5xl font-bold md:text-6xl">₪0</p>
+            <p className="mt-2 text-sm font-semibold text-white">עלות אם לא נמצא חיסכון</p>
+            <p className="mt-1 text-xs text-white/40">מודל הצלחה בלבד - ללא סיכון</p>
+          </motion.div>
+
+          {/* 3 Regular stats */}
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="text-center"
+              transition={{ duration: 0.5, delay: 0.15 + index * 0.1 }}
+              className="flex flex-col items-center justify-center rounded-2xl border border-white/6 bg-[#0A0A0A] px-4 py-7 text-center"
             >
               <AnimatedCounter
                 value={stat.value}
@@ -76,14 +90,12 @@ export default function TrustBar() {
                 prefix={stat.prefix}
                 isInView={isInView}
               />
-              <p className="mt-2 text-sm text-gray-400 md:text-base">
-                {stat.label}
-              </p>
+              <p className="mt-2 text-xs text-white/50">{stat.label}</p>
             </motion.div>
           ))}
         </div>
       </div>
-      <div className="section-divider mx-auto mt-12 max-w-4xl" />
+      <div className="section-divider mx-auto mt-6 max-w-4xl md:mt-10" />
     </section>
   );
 }

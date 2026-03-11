@@ -15,7 +15,7 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="שלחו הודעה בוואטסאפ"
-      className="pulse-ring fixed bottom-6 right-6 z-50 cursor-pointer rounded-full transition-transform hover:scale-110"
+      className="pulse-ring fixed bottom-4 right-4 z-50 cursor-pointer rounded-full transition-transform hover:scale-110 md:bottom-6 md:right-6"
     >
       <Image
         src="/whatsapp1.png"

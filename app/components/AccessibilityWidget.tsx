@@ -98,7 +98,7 @@ export default function AccessibilityWidget() {
   ];
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div className="fixed bottom-4 left-4 z-50 md:bottom-6 md:left-6">
       <AnimatePresence>
         {open && (
           <motion.div
@@ -106,7 +106,7 @@ export default function AccessibilityWidget() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.2 }}
-            className="absolute bottom-16 left-0 mb-2 w-56 rounded-xl glass-card p-3 shadow-xl"
+            className="absolute bottom-14 left-0 mb-2 w-56 rounded-xl border border-white/10 bg-[#111111] p-3 shadow-2xl"
           >
             <div className="mb-2 flex items-center justify-between border-b border-white/10 pb-2">
               <h3 className="text-sm font-semibold text-white">הגדרות נגישות</h3>
@@ -146,9 +146,9 @@ export default function AccessibilityWidget() {
       <button
         onClick={() => setOpen((v) => !v)}
         aria-label="תפריט נגישות"
-        className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2ECC71] text-white shadow-lg transition-transform hover:scale-110 btn-glow cursor-pointer"
+        className="flex h-9 w-9 items-center justify-center rounded-full border border-white/40 bg-[#222222] text-white/80 shadow-lg shadow-black/50 transition-all hover:border-white/60 hover:text-white cursor-pointer"
       >
-        <Accessibility size={28} />
+        <Accessibility size={16} />
       </button>
     </div>
   );

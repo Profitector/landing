@@ -1,13 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0F1B2D;
+  --background: #050505;
   --foreground: #FFFFFF;
-  --navy: #0F1B2D;
-  --navy-light: #1A2B3C;
+  --navy: #0A0A0A;
+  --navy-light: #111111;
   --green: #2ECC71;
   --green-glow: rgba(46, 204, 113, 0.3);
   --light-gray: #F4F7F6;
+  --card-bg: #0D0D0D;
+  --border-subtle: rgba(255, 255, 255, 0.06);
 }
 
 @theme inline {
@@ -17,7 +19,8 @@
   --color-navy-light: var(--navy-light);
   --color-green: var(--green);
   --color-light-gray: var(--light-gray);
-  --font-sans: var(--font-heebo);
+  --font-sans: var(--font-body), var(--font-heading), sans-serif;
+  --font-mono: var(--font-mono), "Courier New", monospace;
 }
 
 html {
@@ -27,10 +30,32 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-heebo), "Segoe UI", Arial, sans-serif;
+  font-family: var(--font-body), var(--font-heading), "Segoe UI", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
 
+/* Grid background pattern - subtle dot grid */
+.grid-bg {
+  background-image:
+    radial-gradient(circle, rgba(46, 204, 113, 0.12) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* Line grid alternative */
+.line-grid-bg {
+  background-image:
+    linear-gradient(rgba(46, 204, 113, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(46, 204, 113, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
 
 @keyframes glow-pulse {
 
@@ -45,13 +70,13 @@ body {
 }
 
 .glow-border {
-  border: 1px solid rgba(46, 204, 113, 0.4);
-  box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
+  border: 1px solid rgba(46, 204, 113, 0.35);
+  box-shadow: 0 0 20px rgba(46, 204, 113, 0.15);
 }
 
 .glow-border-strong {
-  border: 2px solid rgba(46, 204, 113, 0.6);
-  box-shadow: 0 0 30px rgba(46, 204, 113, 0.3), 0 0 60px rgba(46, 204, 113, 0.1);
+  border: 1px solid rgba(46, 204, 113, 0.5);
+  box-shadow: 0 0 30px rgba(46, 204, 113, 0.25), 0 0 60px rgba(46, 204, 113, 0.08);
 }
 
 .glow-animate {
@@ -59,24 +84,24 @@ body {
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--border-subtle);
 }
 
 .glass-card-hover:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(46, 204, 113, 0.4);
-  box-shadow: 0 0 20px rgba(46, 204, 113, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(46, 204, 113, 0.3);
+  box-shadow: 0 0 24px rgba(46, 204, 113, 0.15);
 }
 
 .bg-darker {
-  background: #0A1628;
+  background: #030303;
 }
 
 .section-divider {
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.3), transparent);
+  background: linear-gradient(90deg, transparent, rgba(46, 204, 113, 0.25), transparent);
 }
 
 .gradient-text {
@@ -92,6 +117,55 @@ body {
 
 .btn-glow:hover {
   box-shadow: 0 0 30px rgba(46, 204, 113, 0.6), 0 0 60px rgba(46, 204, 113, 0.2);
+}
+
+/* Strikethrough with green line - used on "leaks" style words */
+.text-strike {
+  position: relative;
+  display: inline-block;
+}
+
+.text-strike::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 3px;
+  background: #2ECC71;
+  transform: translateY(-50%) rotate(-2deg);
+  border-radius: 2px;
+}
+
+/* Neon number highlight */
+.neon-number {
+  color: #2ECC71;
+  font-family: var(--font-mono), "Courier New", monospace;
+  letter-spacing: 1px;
+  text-shadow: 0 0 20px rgba(46, 204, 113, 0.6), 0 0 40px rgba(46, 204, 113, 0.3);
+}
+
+/* Stat card mini badge */
+.stat-badge-up {
+  color: #2ECC71;
+  background: rgba(46, 204, 113, 0.12);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: var(--font-mono), "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.stat-badge-warn {
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.12);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: var(--font-mono), "Courier New", monospace;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 @keyframes pulse-ring {
@@ -146,26 +220,26 @@ input[type='range'] {
 }
 
 input[type='range']::-webkit-slider-runnable-track {
-  height: 8px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.15);
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 input[type='range']::-moz-range-track {
-  height: 8px;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.15);
+  height: 6px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.08);
 }
 
 input[type='range']::-webkit-slider-thumb {
   -webkit-appearance: none;
-  height: 28px;
-  width: 28px;
+  height: 26px;
+  width: 26px;
   border-radius: 50%;
   background: #2ECC71;
   margin-top: -10px;
   cursor: grab;
-  box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+  box-shadow: 0 0 12px rgba(46, 204, 113, 0.6);
   transition: transform 0.2s;
 }
 
@@ -178,13 +252,13 @@ input[type='range']::-webkit-slider-thumb:active {
 }
 
 input[type='range']::-moz-range-thumb {
-  height: 28px;
-  width: 28px;
+  height: 26px;
+  width: 26px;
   border-radius: 50%;
   background: #2ECC71;
   border: 0;
   cursor: grab;
-  box-shadow: 0 0 10px rgba(46, 204, 113, 0.5);
+  box-shadow: 0 0 12px rgba(46, 204, 113, 0.6);
   transition: transform 0.2s;
 }
 
@@ -194,4 +268,40 @@ input[type='range']::-moz-range-thumb:hover {
 
 input[type='range']::-moz-range-thumb:active {
   cursor: grabbing;
+}
+
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2ECC71;
+  border-radius: 8px; /* דרגה מתונה, לא "קפסולה" */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #27ae60;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #2ECC71 #050505;
 }

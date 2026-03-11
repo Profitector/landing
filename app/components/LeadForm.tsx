@@ -63,44 +63,52 @@ export default function LeadForm() {
   };
 
   return (
-    <section id="lead-form" className="bg-[#0F1B2D] py-10 md:py-20">
-      <div className="mx-auto max-w-4xl px-6">
+    <section id="lead-form" className="bg-[#050505] py-10 md:py-16">
+      <div className="section-divider mx-auto mb-12 max-w-4xl hidden md:block" />
+      <div className="mx-auto max-w-2xl px-6 sm:px-10 lg:px-16">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="glass-card glow-border rounded-2xl p-8 md:p-12"
+          className="rounded-2xl border border-white/6 bg-[#0A0A0A] p-8 md:p-10"
         >
-          <h2 className="mb-4 text-center text-3xl font-bold text-white md:text-4xl">
-            כל שקל שספק גובה בטעות - אנחנו נמצא אותו
-          </h2>
-          <p className="mb-10 text-center text-lg text-gray-400">
-            השאירו פרטים ונחזור אליכם תוך 24 שעות
-          </p>
+          <div className="mb-8 text-center">
+            <span className="mb-4 inline-block rounded-full border border-[#2ECC71]/25 bg-[#2ECC71]/8 px-4 py-1 text-xs font-semibold uppercase tracking-widest text-[#2ECC71]">
+              התחילו עכשיו
+            </span>
+            <h2 className="mt-4 text-2xl font-bold text-white md:text-3xl">
+              כל שקל שספק גובה בטעות -
+              <br />
+              <span className="gradient-text">אנחנו נמצא אותו</span>
+            </h2>
+            <p className="mt-3 text-sm text-white/50">
+              השאירו פרטים ונחזור אליכם תוך 24 שעות
+            </p>
+          </div>
 
           {submitted ? (
             <motion.div
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.5, type: "spring" }}
-              className="glow-border rounded-xl bg-[#2ECC71]/10 p-10 text-center"
+              className="glow-border rounded-xl bg-[#2ECC71]/8 p-10 text-center"
             >
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#2ECC71]">
-                <svg className="h-8 w-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[#2ECC71]">
+                <svg className="h-7 w-7 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p className="text-2xl font-bold text-white">
+              <p className="text-xl font-bold text-white">
                 תודה! קיבלנו את הפרטים
               </p>
-              <p className="mt-2 text-gray-300">
+              <p className="mt-2 text-sm text-white/50">
                 נחזור אליכם תוך 24 שעות
               </p>
             </motion.div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid gap-6 md:grid-cols-2">
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div className="grid gap-4 md:grid-cols-2">
                 <Input
                   name="name"
                   placeholder="שם מלא"
@@ -134,17 +142,20 @@ export default function LeadForm() {
                 />
               </div>
               {error && (
-                <p className="text-center text-red-400">{error}</p>
+                <p className="text-center text-sm text-red-400">{error}</p>
               )}
-              <div className="text-center">
+              <div className="pt-2 text-center">
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn-glow cursor-pointer rounded-full bg-[#2ECC71] px-12 py-4 text-lg font-semibold text-white transition-all hover:scale-105 hover:bg-[#27ae60] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
+                  className="btn-glow w-full cursor-pointer rounded-full bg-[#2ECC71] px-10 py-4 text-base font-bold text-black transition-all hover:scale-105 hover:bg-[#27ae60] disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:scale-100"
                 >
                   {loading ? "שולח..." : "רוצה לחסוך כסף - דברו איתי →"}
                 </button>
               </div>
+              <p className="text-center text-xs text-white/40">
+                ₪0 עלות אם לא נמצא חיסכון · ללא התחייבות
+              </p>
             </form>
           )}
         </motion.div>
