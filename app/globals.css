@@ -36,7 +36,12 @@ body {
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-heading), sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -271,8 +276,13 @@ input[type='range']::-moz-range-thumb:active {
 }
 
 @keyframes marquee {
-  0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .animate-marquee {
@@ -294,7 +304,8 @@ input[type='range']::-moz-range-thumb:active {
 
 ::-webkit-scrollbar-thumb {
   background: #2ECC71;
-  border-radius: 8px; /* דרגה מתונה, לא "קפסולה" */
+  border-radius: 8px;
+  /* דרגה מתונה, לא "קפסולה" */
 }
 
 ::-webkit-scrollbar-thumb:hover {

@@ -1,21 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const CONSENT_KEY = "cookie-consent";
 
-function hasConsent(): boolean {
-  if (typeof window === "undefined") return true;
-  try {
-    return !!localStorage.getItem(CONSENT_KEY);
-  } catch {
-    return true;
-  }
-}
-
 export default function CookieBanner() {
-  const [visible, setVisible] = useState(() => !hasConsent());
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    try {
+      if (!localStorage.getItem(CONSENT_KEY)) {
+        setVisible(true);
+      }
+    } catch {
+      // noop
+    }
+  }, []);
 
   const accept = () => {
     localStorage.setItem(CONSENT_KEY, "true");
