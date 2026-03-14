@@ -42,7 +42,7 @@ export default function ValueCards() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="mx-auto mb-8 max-w-2xl text-lg text-white/50 md:mb-12"
         >
-          אף אחד עדיין לא בנה את זה. אנחנו כאן.
+          הדור הבא של הגנת הרווחיות. בלי טעויות, בלי אקסלים.
         </motion.p>
 
         {/* Two callout boxes */}
@@ -55,10 +55,8 @@ export default function ValueCards() {
         >
           <div className="glow-border rounded-2xl bg-[#0A0A0A] px-8 py-7 text-center">
             <p className="neon-number text-4xl font-bold sm:text-5xl">100%</p>
-            <p className="mt-2 font-semibold text-white">על בסיס הצלחה</p>
-            <p className="mt-1 text-sm text-white/40">
-              לא מצאנו? לא משלמים.
-            </p>
+            <p className="mt-2 font-semibold text-white">מבוסס הצלחה</p>
+            <p className="mt-1 text-sm text-white/40">לא מצאנו? לא משלמים.</p>
           </div>
           <div className="glow-border rounded-2xl bg-[#0A0A0A] px-8 py-7 text-center">
             <p className="neon-number text-4xl font-bold sm:text-5xl">₪0</p>

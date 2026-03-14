@@ -6,7 +6,7 @@ import { useRef, useState, useEffect } from "react";
 const stats = [
   { value: 4, suffix: "%", prefix: "", label: "הפסד ממוצע שמצאנו" },
   { value: 24, suffix: "h", prefix: "", label: "זמן הטמעה" },
-  { value: 100, suffix: "%", prefix: "", label: "על בסיס הצלחה" },
+  { value: 100, suffix: "%", prefix: "", label: "מחויבים לתוצאות" },
 ];
 
 function AnimatedCounter({
@@ -71,7 +71,7 @@ export default function TrustBar() {
           >
             <p className="neon-number text-5xl font-bold md:text-6xl">₪0</p>
             <p className="mt-2 text-sm font-semibold text-white">עלות אם לא נמצא חיסכון</p>
-            <p className="mt-1 text-xs text-white/40">מודל הצלחה בלבד - ללא סיכון</p>
+            <p className="mt-1 text-xs text-white/40">בדיקת עומק ראשונית ללא סיכון</p>
           </motion.div>
 
           {/* 3 Regular stats */}

@@ -80,14 +80,14 @@ export default function WhatItCatches() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="group rounded-2xl border border-white/6 bg-[#0A0A0A] p-7 transition-all duration-300 hover:border-[#2ECC71]/25 hover:bg-[#0D0D0D]"
             >
-              <div className="mb-4 flex items-center gap-3">
-                <span className="text-2xl text-[#2ECC71]">{item.marker}</span>
-                <div>
+              <div className="mb-4 flex items-center gap-3 text-right" dir="rtl">
+                <span className="text-2xl text-[#2ECC71] shrink-0">{item.marker}</span>
+                <div className="min-w-0">
                   <p className="font-bold text-white">{item.title}</p>
-                  <p className="text-xs text-white/40">{item.en}</p>
+                  <p className="text-xs text-white/50">{item.en}</p>
                 </div>
               </div>
-              <p className="text-sm leading-relaxed text-white/50">
+              <p className="text-sm leading-relaxed text-white/50 text-right" dir="rtl">
                 {item.description}
               </p>
             </motion.div>

@@ -22,8 +22,8 @@ export default function Header() {
       className="fixed top-0 right-0 left-0 z-50 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-        {/* Logo — mobile: LEFT (order-3 in RTL); desktop: RIGHT (md:order-1 in RTL) */}
-        <a href="#" dir="ltr" className="order-3 flex items-center gap-2 text-[1.55rem] font-bold leading-none tracking-tight text-white font-(family-name:--font-logo) md:order-1">
+        {/* Logo — mobile: left (order-2); desktop: right (md:order-1) */}
+        <a href="#" dir="ltr" className="order-2 flex items-center gap-2 text-[1.55rem] font-bold leading-none tracking-tight text-white font-(family-name:--font-logo) md:order-1">
           <Shield className="h-6 w-6 text-[#2ECC71]" />
           <span>profitector<span className="text-[#2ECC71]">.ai</span></span>
         </a>
@@ -45,22 +45,13 @@ export default function Header() {
           לבדיקה חינם
         </a>
 
-        {/* Mobile CTA — middle (order-2 in RTL) */}
-        <a
-          href="#lead-form"
-          onClick={() => setMobileOpen(false)}
-          className="btn-glow order-2 rounded-full bg-[#2ECC71] px-4 py-2 text-xs font-bold text-black transition-all hover:bg-[#27ae60] md:hidden"
-        >
-          לבדיקה חינם
-        </a>
-
-        {/* Hamburger — mobile: RIGHT (order-1 in RTL) */}
+        {/* Hamburger — mobile: far right (easy for right-handed users), large tap target */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="פתח תפריט"
-          className="order-1 flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 text-white/70 transition-colors hover:border-white/30 hover:text-white md:hidden"
+          className="order-1 flex h-12 w-12 items-center justify-center rounded-lg border border-white/10 px-4 text-white/70 transition-colors hover:border-white/30 hover:text-white md:hidden"
         >
-          {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
@@ -86,6 +77,15 @@ export default function Header() {
                   </a>
                 </li>
               ))}
+              <li className="mt-2 pt-3 border-t border-white/10">
+                <a
+                  href="#lead-form"
+                  onClick={() => setMobileOpen(false)}
+                  className="btn-glow block rounded-full bg-[#2ECC71] px-6 py-3 text-center text-sm font-bold text-black transition-all hover:bg-[#27ae60]"
+                >
+                  לבדיקה חינם
+                </a>
+              </li>
             </ul>
           </motion.nav>
         )}

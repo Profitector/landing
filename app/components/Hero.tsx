@@ -33,13 +33,13 @@ export default function Hero() {
               AI Profit Protection
             </motion.div>
 
-            <h1 className="mb-5 text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-4xl lg:text-5xl xl:text-6xl">
+            <h1 className="mb-5 text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-[2.5rem] md:text-4xl lg:text-5xl xl:text-6xl">
               <span className="block text-white">הרווחים שלכם</span>
               <span className="block">
                 <span className="text-strike gradient-text">דולפים.</span>
               </span>
-              <span className="mt-1 block text-2xl font-bold text-gray-300 md:text-3xl lg:text-4xl">
-                אנחנו מוצאים אותם.
+              <span className="mt-1 block text-3xl font-bold text-gray-300 lg:text-4xl">
+                אנחנו עוצרים את זה.
               </span>
             </h1>
 
@@ -66,7 +66,7 @@ export default function Hero() {
                 <span className="text-[#2ECC71]">✓</span> תוצאות תוך 48 שעות
               </span>
               <span className="flex items-center gap-1.5">
-                <span className="text-[#2ECC71]">✓</span> על בסיס הצלחה בלבד
+                <span className="text-[#2ECC71]">✓</span> בדיקה ראשונית ללא סיכון
               </span>
             </div>
           </motion.div>
