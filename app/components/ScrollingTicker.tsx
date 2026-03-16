@@ -79,6 +79,7 @@ export default function ScrollingTicker() {
 
               {/* Text */}
               <span
+                dir="rtl"
                 className="whitespace-nowrap text-[0.8rem] font-medium tracking-wide"
                 style={{ color: item.accent ? "rgba(255,255,255,0.85)" : "rgba(255,255,255,0.45)" }}
               >

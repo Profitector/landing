@@ -53,15 +53,17 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               {[
-                { href: "#savings", label: "מחשבון חיסכון" },
-                { href: "#how-it-works", label: "איך זה עובד" },
-                { href: "#why-us", label: "למה אנחנו" },
-                { href: "#faq", label: "שאלות נפוצות" },
-                { href: "#lead-form", label: "צרו קשר" },
+                { href: "#savings", label: "מחשבון חיסכון", external: false },
+                { href: "#how-it-works", label: "איך זה עובד", external: false },
+                { href: "#why-us", label: "למה אנחנו", external: false },
+                { href: "#faq", label: "שאלות נפוצות", external: false },
+                { href: "#lead-form", label: "צרו קשר", external: false },
+                { href: "https://app.profitector.ai/", label: "כניסה למערכת", external: true },
               ].map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
+                    {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                     className="text-sm text-white/40 transition-colors duration-200 hover:text-white"
                   >
                     {link.label}

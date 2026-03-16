@@ -22,13 +22,13 @@ export default function Header() {
       className="fixed top-0 right-0 left-0 z-50 border-b border-white/10 bg-[#050505]/95 backdrop-blur-md"
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-10 lg:px-16">
-        {/* Logo — mobile: left (order-2); desktop: right (md:order-1) */}
+        {/* Logo */}
         <a href="#" dir="ltr" className="order-2 flex items-center gap-2 text-[1.55rem] font-bold leading-none tracking-tight text-white font-(family-name:--font-logo) md:order-1">
           <Shield className="h-6 w-6 text-[#2ECC71]" />
           <span>profitector<span className="text-[#2ECC71]">.ai</span></span>
         </a>
 
-        {/* Desktop nav */}
+        {/* Desktop nav — informational links only */}
         <nav className="order-2 hidden items-center gap-8 text-[0.9rem] text-white/60 md:flex">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="transition-colors hover:text-[#2ECC71]">
@@ -37,19 +37,29 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* Desktop CTA */}
-        <a
-          href="#lead-form"
-          className="btn-glow order-3 hidden rounded-full bg-[#2ECC71] px-6 py-2.5 text-sm font-bold text-black transition-all hover:scale-105 hover:bg-[#27ae60] md:inline-block"
-        >
-          לבדיקה חינם
-        </a>
+        {/* Desktop Auth/CTA group */}
+        <div className="order-3 hidden items-center gap-4 md:flex">
+          <a
+            href="https://app.profitector.ai/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-3 py-2 text-sm font-medium text-white/70 transition-colors hover:text-white"
+          >
+            כניסה למערכת
+          </a>
+          <a
+            href="#lead-form"
+            className="btn-glow rounded-full bg-[#2ECC71] px-6 py-2.5 text-sm font-bold text-black transition-all hover:scale-105 hover:bg-[#27ae60]"
+          >
+            לבדיקה חינם
+          </a>
+        </div>
 
-        {/* Hamburger — mobile: far right (easy for right-handed users), large tap target */}
+        {/* Hamburger — mobile only */}
         <button
           onClick={() => setMobileOpen((v) => !v)}
           aria-label="פתח תפריט"
-          className="order-1 flex h-12 w-12 items-center justify-center rounded-lg border border-white/10 px-4 text-white/70 transition-colors hover:border-white/30 hover:text-white md:hidden"
+          className="order-1 flex h-12 w-12 items-center justify-center rounded-lg px-4 text-white/70 transition-colors hover:text-white md:!hidden"
         >
           {mobileOpen ? <X size={22} /> : <Menu size={22} />}
         </button>
@@ -77,6 +87,17 @@ export default function Header() {
                   </a>
                 </li>
               ))}
+              <li>
+                <a
+                  href="https://app.profitector.ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileOpen(false)}
+                  className="block py-3 text-base font-medium text-white/70 transition-colors hover:text-[#2ECC71]"
+                >
+                  כניסה למערכת
+                </a>
+              </li>
               <li className="mt-2 pt-3 border-t border-white/10">
                 <a
                   href="#lead-form"
